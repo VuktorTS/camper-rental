@@ -1,5 +1,6 @@
-function App() {
-  return <div>Hello</div>;
-}
+import { getAllCampars } from "./services/api";
 
-export default App;
+export const App = () => {
+  console.log(getAllCampars());
+  return <div>Hello</div>;
+};
