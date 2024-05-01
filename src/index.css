@@ -1,0 +1,48 @@
+:root {
+  font-family: Inter, sans-serif;
+  line-height: 0.6;
+  font-weight: 400;
+
+  --color-main: #101828;
+  --color-text: #475467;
+  --color-button: #e44848;
+  --color-rating: #ffc531;
+  --color-block-features: #f2f4f7;
+  --color-inputs: #f7f7f7;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+input {
+  outline: none;
+}
