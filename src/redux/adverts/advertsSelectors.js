@@ -1,1 +1,4 @@
-export const advertsSelector = (state) => state.camper.adventers;
+export const advertsSelector = (state) => {
+  console.log("🚀 ~ advertsSelector ~ state:", state);
+  return state.camper.adventers;
+};

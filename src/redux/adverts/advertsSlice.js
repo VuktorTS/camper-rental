@@ -4,6 +4,7 @@ import { getAdverts } from "./advertsOperations";
 const initialState = {
   isLoading: false,
   adventers: [],
+  favorites: ["hello"],
 };
 
 const adventerSlice = createSlice({
@@ -13,6 +14,7 @@ const adventerSlice = createSlice({
     builder
       .addCase(getAdverts.fulfilled, (state, { payload }) => {
         state.adventers = payload;
+        state.favorites = ["world"];
       })
       .addCase(getAdverts.rejected, (state, { payload }) => {
         console.log("🚀 ~ builder.addCase ~ payload:", payload);
