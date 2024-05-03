@@ -1,23 +1,52 @@
 import { TypeCardItem } from "../TypeCardItem/TypeCardItem";
-import { Item } from "./AdverdsCardItem.styled";
+import icons from "../../img/sprite.svg";
+import {
+  Description,
+  HeaderCamper,
+  ImgCamper,
+  Item,
+  IconHard,
+  NameCamper,
+  PriceCamper,
+  TapyCardList,
+  IconStar,
+  ReviewsCamper,
+  InfoCamper,
+  IconLocation,
+  LocationCamper,
+  ButtonShowMore,
+} from "./AdverdsCardItem.styled";
 
 export const AdverdsCardItem = ({ adverd }) => {
   return (
     <Item>
-      <img src="" alt="" />
+      <ImgCamper src={adverd.gallery[0]} alt={adverd.name} />
       <div className="info-container">
-        <div className="header">
-          <h2 className="name">{adverd.name}</h2>
-          <p className="price">{adverd.price}</p>
-        </div>
-        <div className="info">
-          <p className="reviews">
-            {adverd.rating}({adverd.reviews.length} Reviews)
-          </p>
-          <div className="location">{adverd.location}</div>
-        </div>
-        <p className="description">{adverd.description}</p>
-        <ul>
+        <HeaderCamper>
+          <NameCamper>{adverd.name}</NameCamper>
+          <PriceCamper>€{adverd.price.toFixed(2)}</PriceCamper>
+          <IconHard>
+            <use href={`${icons}#icon-heart`}></use>
+          </IconHard>
+        </HeaderCamper>
+        <InfoCamper>
+          <ReviewsCamper>
+            <IconStar>
+              <use href={`${icons}#icon-star`}></use>
+            </IconStar>
+            <u>
+              {adverd.rating}({adverd.reviews.length} Reviews)
+            </u>
+          </ReviewsCamper>
+          <LocationCamper>
+            <IconLocation>
+              <use href={`${icons}#icon-map-pin`}></use>
+            </IconLocation>
+            {adverd.location}
+          </LocationCamper>
+        </InfoCamper>
+        <Description>{adverd.description}</Description>
+        <TapyCardList>
           <TypeCardItem
             icon="icon-adults"
             text="adults"
@@ -32,8 +61,8 @@ export const AdverdsCardItem = ({ adverd }) => {
             value={adverd.details.beds}
           />
           <TypeCardItem icon="icon-airConditioner" text="AC" />
-        </ul>
-        <button type="button">Show more</button>
+        </TapyCardList>
+        <ButtonShowMore type="button">Show more</ButtonShowMore>
       </div>
     </Item>
   );

@@ -1,3 +1,5 @@
+import { HeaderContainer } from "./Header.stlyled";
+
 export const Header = () => {
-  return <div>Header</div>;
+  return <HeaderContainer>Header</HeaderContainer>;
 };
