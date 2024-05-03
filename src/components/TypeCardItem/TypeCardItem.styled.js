@@ -13,4 +13,6 @@ export const TypeCard = styled.li`
 export const Icon = styled.svg`
   width: 20px;
   height: 20px;
+  fill: transparent;
+  stroke: var(--color-main);
 `;

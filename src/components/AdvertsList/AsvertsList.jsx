@@ -4,13 +4,20 @@ import { AdverdsContainer, List, ButtonLoadMore } from "./AdvertsList.styled";
 import { advertsSelector } from "../../redux/adverts/advertsSelectors";
 import { useEffect, useState } from "react";
 import { getAdverts } from "../../redux/adverts/advertsOperations";
+
 export const AsvertsList = () => {
   const adverds = useSelector(advertsSelector);
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getAdverts(page));
-  }, []);
+  }, [page]);
+
+  const handleClick = () => {
+    setPage(page + 1);
+  };
+
   return (
     <AdverdsContainer>
       <List>
@@ -19,7 +26,7 @@ export const AsvertsList = () => {
             <AdverdsCardItem key={adverd._id} adverd={adverd} />
           ))}
       </List>
-      <ButtonLoadMore>Loade more</ButtonLoadMore>
+      <ButtonLoadMore onClick={handleClick}>Loade more</ButtonLoadMore>
     </AdverdsContainer>
   );
 };

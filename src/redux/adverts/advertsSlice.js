@@ -13,7 +13,7 @@ const adventerSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getAdverts.fulfilled, (state, { payload }) => {
-        state.adventers = payload;
+        state.adventers = [...state.adventers, ...payload];
         state.favorites = ["world"];
       })
       .addCase(getAdverts.rejected, (state, { payload }) => {
