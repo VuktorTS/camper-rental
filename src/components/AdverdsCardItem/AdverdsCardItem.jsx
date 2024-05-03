@@ -16,8 +16,19 @@ import {
   LocationCamper,
   ButtonShowMore,
 } from "./AdverdsCardItem.styled";
+import { useState } from "react";
+import CamperInfoModal from "../CamperInfoModal/CamperInfoModal";
 
 export const AdverdsCardItem = ({ adverd }) => {
+  const [modal, setModal] = useState(true);
+
+  const onClose = () => {
+    setModal(false);
+  };
+  const onOpen = () => {
+    setModal(true);
+  };
+
   return (
     <Item>
       <ImgCamper src={adverd.gallery[0]} alt={adverd.name} />
@@ -62,8 +73,11 @@ export const AdverdsCardItem = ({ adverd }) => {
           />
           <TypeCardItem icon="icon-airConditioner" text="AC" />
         </TapyCardList>
-        <ButtonShowMore type="button">Show more</ButtonShowMore>
+        <ButtonShowMore type="button" onClick={() => onOpen()}>
+          Show more
+        </ButtonShowMore>
       </div>
+      {modal && <CamperInfoModal onClose={onClose} adverd={adverd} />}
     </Item>
   );
 };

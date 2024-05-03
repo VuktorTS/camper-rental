@@ -8,6 +8,7 @@
   --color-rating: #ffc531;
   --color-block-features: #f2f4f7;
   --color-inputs: #f7f7f7;
+  --backdrop-color: rgba(0, 0, 0, 0.8);
 }
 body {
   color: var(--color-main);
