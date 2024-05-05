@@ -25,11 +25,15 @@ export const CatalogPage = () => {
 
   return (
     <CatalogContainer>
-      <AsvertsFilter />
-      <ListContainder>
-        <AsvertsList adverds={adverds} />
-        <ButtonLoadMore onClick={handleClick}>Loade more</ButtonLoadMore>
-      </ListContainder>
+      {adverds.length > 0 && (
+        <>
+          <AsvertsFilter />
+          <ListContainder>
+            <AsvertsList adverds={adverds} />
+            <ButtonLoadMore onClick={handleClick}>Loade more</ButtonLoadMore>
+          </ListContainder>
+        </>
+      )}
     </CatalogContainer>
   );
 };

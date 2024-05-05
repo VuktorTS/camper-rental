@@ -21,19 +21,14 @@ export const List = styled.ul`
 export const NavlinkHome = styled(NavLink)`
   font-weight: 600;
   font-size: 24px;
-  color: var(--third-light);
-  text-shadow: 0 0 2px var(--primary-dark), 0 0 2px var(--primary-dark),
-    0 0 2px var(--primary-dark), 0 0 2px var(--primary-dark);
+  color: var(--color-main);
 `;
 export const Navlink = styled(NavLink)`
   font-weight: 600;
   font-size: 24px;
-  color: var(--third-light);
-  text-shadow: 0 0 2px var(--primary-dark), 0 0 2px var(--primary-dark),
-    0 0 2px var(--primary-dark), 0 0 2px var(--primary-dark);
+  color: var(--color-main);
 
   &.active {
-    color: var(--primary-red);
-    text-shadow: none;
+    color: var(--color-button);
   }
 `;

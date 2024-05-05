@@ -15,7 +15,7 @@ const adventerSlice = createSlice({
       state.favorites.push(payload);
     },
     removeFavorites: (state, { payload }) => {
-      state.favorites = state.favorites.filter((id) => id !== payload);
+      state.favorites = state.favorites.filter((camper) => camper._id !== payload);
     },
 
     resetadventers: (state) => {

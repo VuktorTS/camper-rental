@@ -12,14 +12,3 @@ export const getAdverts = createAsyncThunk(
     }
   },
 );
-// export const getAllAdverts = createAsyncThunk(
-//   "camper/getAllAdverts",
-//   async (_, thunkAPI) => {
-//     try {
-//       const adverts = await getAllCampars();
-//       return adverts;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   },
-// );

@@ -5,7 +5,3 @@ export const getCampars = async (page = 1) => {
   const { data } = await axios.get(`/adverts?page=${page}&limit=4`);
   return data;
 };
-// export const getAllCampars = async (page = 1) => {
-//   const { data } = await axios.get(`/adverts`);
-//   return data;
-// };

@@ -35,10 +35,10 @@ export const AdverdsCardItem = ({ adverd }) => {
     const isCardFavorite = isFavorite();
     isCardFavorite
       ? dispatch(removeFavorites(adverd._id))
-      : dispatch(addFavorites(adverd._id));
+      : dispatch(addFavorites(adverd));
   };
   const isFavorite = () => {
-    return favorites.includes(adverd._id);
+    return favorites.some((item) => item._id === adverd._id);
   };
   const onClose = () => {
     setModal(false);
