@@ -1,17 +1,18 @@
 import { nanoid } from "nanoid";
 import { FilterCard } from "../FilterCard/FilterCard";
+import icons from "../../img/sprite.svg";
 import {
   ButtonSearch,
-  EquipmentBox,
   EquipmentList,
   EquipmentTitle,
   FilterContainer,
   FilterSection,
   FilterTitle,
-  InputCity,
-  LocationSection,
-  LocationTitle,
-  TypeBox,
+  Input,
+  InputBlock,
+  InputContainer,
+  Label,
+  SvgMap,
   TypeList,
   TypeTitle,
 } from "./AsvertsFilter.styled";
@@ -31,13 +32,18 @@ const types = [
 export const AsvertsFilter = () => {
   return (
     <FilterContainer>
-      <LocationSection>
-        <LocationTitle>Location</LocationTitle>
-        <InputCity />
-      </LocationSection>
+      <InputBlock>
+        <Label htmlFor="map">Location</Label>
+        <InputContainer>
+          <Input type="text" id="map" name="map" placeholder="City" />
+          <SvgMap width="18" height="20">
+            <use href={icons + "#icon-map-pin"}></use>
+          </SvgMap>
+        </InputContainer>
+      </InputBlock>
       <FilterSection>
         <FilterTitle>Filters</FilterTitle>
-        <EquipmentBox>
+        <div>
           <EquipmentTitle>Vehicle equipment</EquipmentTitle>
           <EquipmentList>
             {equipments.map((equipment) => (
@@ -49,8 +55,8 @@ export const AsvertsFilter = () => {
               />
             ))}
           </EquipmentList>
-        </EquipmentBox>
-        <TypeBox>
+        </div>
+        <div>
           <TypeTitle>Vehicle type</TypeTitle>
           <TypeList>
             {types.map((type) => (
@@ -62,7 +68,7 @@ export const AsvertsFilter = () => {
               />
             ))}
           </TypeList>
-        </TypeBox>
+        </div>
       </FilterSection>
       <ButtonSearch type="button">Search</ButtonSearch>
     </FilterContainer>
