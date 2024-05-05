@@ -14,9 +14,9 @@ export const Features = ({ adverd }) => {
   return (
     <FeaturesContainr>
       <TypeCartList>
-        <TypeCardItem icon="icon-adults" text="adults" value={adverd.adults} />
-        <TypeCardItem icon="icon-transmission" text="Automatic" />
-        <TypeCardItem icon="icon-engine" text="Petrol" />
+        <TypeCardItem icon="adults" text="adults" value={adverd.adults} />
+        <TypeCardItem icon="transmission" text="Automatic" />
+        <TypeCardItem icon="engine" text="Petrol" />
         {categories.map((category) => (
           <TypeCardItem
             key={nanoid()}
