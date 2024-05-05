@@ -16,7 +16,8 @@ export const Backdrop = styled.div`
 export const Container = styled.div`
   display: inline-block;
   width: 982px;
-  margin: 40px 0;
+  height: 720px;
+  margin: auto;
   padding: 40px;
   border-radius: 10px;
   background-color: #fff;
@@ -78,6 +79,23 @@ export const PriceCamper = styled.p`
   line-height: 1.25;
   margin-bottom: 24px;
 `;
+export const InfoContainer = styled.div`
+  overflow-y: scroll;
+  max-height: 507px;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+    border-radius: 7px;
+  }
+`;
 export const CalleryImg = styled.div`
   display: flex;
   gap: 16px;
@@ -130,4 +148,7 @@ export const ButtonDetail = styled.button`
     }
   }
 `;
-export const DetailsContainer = styled.div``;
+export const DetailsContainer = styled.div`
+  display: flex;
+  gap: 24px;
+`;

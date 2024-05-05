@@ -16,6 +16,7 @@ import {
   ImgCamper,
   ImgContainer,
   InfoCamper,
+  InfoContainer,
   LocationCamper,
   NameCamper,
   PriceCamper,
@@ -25,6 +26,9 @@ import {
 } from "./CamperInfoModal.styled";
 import icons from "../../img/sprite.svg";
 import clsx from "clsx";
+import { Form } from "../Form/Form";
+import { Features } from "../Features/Features";
+import { Reviews } from "../Reviews/Reviews";
 
 const modalRoot = document.querySelector("#modal");
 
@@ -78,43 +82,45 @@ const CamperInfoModal = ({ onClose, adverd }) => {
           </InfoCamper>
           <PriceCamper>{adverd.price.toFixed(2)}</PriceCamper>
         </HeaderModal>
-        <CalleryImg>
-          {adverd.gallery.map((imgUrl) => (
-            <ImgContainer key={imgUrl}>
-              <ImgCamper src={imgUrl} alt={adverd.name} />
-            </ImgContainer>
-          ))}
-        </CalleryImg>
-        <Description>{adverd.description}</Description>
+        <InfoContainer>
+          <CalleryImg>
+            {adverd.gallery.map((imgUrl) => (
+              <ImgContainer key={imgUrl}>
+                <ImgCamper src={imgUrl} alt={adverd.name} />
+              </ImgContainer>
+            ))}
+          </CalleryImg>
+          <Description>{adverd.description}</Description>
 
-        <TabDetailsList>
-          <TabDetailItem>
-            <ButtonDetail
-              type="button"
-              className={clsx(isActive && "active")}
-              onClick={() => setIsActive(true)}
-            >
-              Features
-            </ButtonDetail>
-          </TabDetailItem>
-          <TabDetailItem>
-            <ButtonDetail
-              type="button"
-              className={clsx(!isActive && "active")}
-              onClick={() => setIsActive(false)}
-            >
-              Reviews
-            </ButtonDetail>
-          </TabDetailItem>
-        </TabDetailsList>
-        <DetailsContainer>
-          {isActive ? (
-            <Features adverd={adverd} />
-          ) : (
-            <Reviews adverd={adverd} />
-          )}
-          <Form />
-        </DetailsContainer>
+          <TabDetailsList>
+            <TabDetailItem>
+              <ButtonDetail
+                type="button"
+                className={clsx(isActive && "active")}
+                onClick={() => setIsActive(true)}
+              >
+                Features
+              </ButtonDetail>
+            </TabDetailItem>
+            <TabDetailItem>
+              <ButtonDetail
+                type="button"
+                className={clsx(!isActive && "active")}
+                onClick={() => setIsActive(false)}
+              >
+                Reviews
+              </ButtonDetail>
+            </TabDetailItem>
+          </TabDetailsList>
+          <DetailsContainer>
+            {isActive ? (
+              <Features adverd={adverd} />
+            ) : (
+              <Reviews adverd={adverd} />
+            )}
+            <Form />
+          </DetailsContainer>
+        </InfoContainer>
       </Container>
     </Backdrop>,
     modalRoot,

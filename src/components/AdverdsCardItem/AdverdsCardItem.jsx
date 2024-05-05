@@ -58,20 +58,12 @@ export const AdverdsCardItem = ({ adverd }) => {
         </InfoCamper>
         <Description>{adverd.description}</Description>
         <TapyCardList>
-          <TypeCardItem
-            icon="icon-adults"
-            text="adults"
-            value={adverd.adults}
-          />
-          <TypeCardItem icon="icon-transmission" text="Automatic" />
-          <TypeCardItem icon="icon-engine" text="Petrol" />
-          <TypeCardItem icon="icon-kitchen" text="Kitchen" />
-          <TypeCardItem
-            icon="icon-beds"
-            text="beds"
-            value={adverd.details.beds}
-          />
-          <TypeCardItem icon="icon-airConditioner" text="AC" />
+          <TypeCardItem icon="adults" text="adults" value={adverd.adults} />
+          <TypeCardItem icon="transmission" text="Automatic" />
+          <TypeCardItem icon="engine" text="Petrol" />
+          <TypeCardItem icon="kitchen" text="Kitchen" />
+          <TypeCardItem icon="beds" text="beds" value={adverd.details.beds} />
+          <TypeCardItem icon="airConditioner" text="AC" />
         </TapyCardList>
         <ButtonShowMore type="button" onClick={() => onOpen()}>
           Show more
@@ -87,10 +79,10 @@ export const AdverdsCardItem = ({ adverd }) => {
 //     "price": 10000,
 //     "rating": 4.5,
 //     "location": "Ukraine, Kyiv",
-//     "adults": 3,
+//     "adults": 3, /////////////
 //     "children": 2,
-//     "engine": "petrol",
-//     "transmission": "automatic",
+//     "engine": "petrol",//////////
+//     "transmission": "automatic",////////////
 //     "form": "alcove",
 //     "length": "7.3m",
 //     "width": "2.65m",
