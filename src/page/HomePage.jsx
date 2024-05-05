@@ -1,6 +1,12 @@
-
+import { HomeMessage } from "./HomePage";
 
 export const HomePage = () => {
-
-  return <div>Home Page</div>;
+  return (
+    <HomeMessage>
+      Welcome to our camper rental website! Embark on your next adventure with
+      our fleet of cozy campers. Whether you're craving a road trip with friends
+      or a peaceful getaway with family, we have the perfect camper for you.
+      Start planning your memorable journey today!
+    </HomeMessage>
+  );
 };
