@@ -18,9 +18,24 @@ import {
 } from "./AdverdsCardItem.styled";
 import { useState } from "react";
 import CamperInfoModal from "../CamperInfoModal/CamperInfoModal";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addFavorites,
+  removeFavorites,
+} from "../../redux/adverts/advertsSlice";
+import { favoriteSelector } from "../../redux/adverts/advertsSelectors";
 
 export const AdverdsCardItem = ({ adverd }) => {
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
+  const dispatch = useDispatch();
+  const favorites = useSelector(favoriteSelector);
+
+  const switchFavorite = () => {
+    const isCardFavorite = favorites.includes(adverd._id);
+    isCardFavorite
+      ? dispatch(removeFavorites(adverd._id))
+      : dispatch(addFavorites(adverd._id));
+  };
 
   const onClose = () => {
     setModal(false);
@@ -36,9 +51,11 @@ export const AdverdsCardItem = ({ adverd }) => {
         <HeaderCamper>
           <NameCamper>{adverd.name}</NameCamper>
           <PriceCamper>€{adverd.price.toFixed(2)}</PriceCamper>
-          <IconHard>
-            <use href={`${icons}#icon-heart`}></use>
-          </IconHard>
+          <button type="button">
+            <IconHard onClick={switchFavorite}>
+              <use href={`${icons}#icon-heart`}></use>
+            </IconHard>
+          </button>
         </HeaderCamper>
         <InfoCamper>
           <ReviewsCamper>

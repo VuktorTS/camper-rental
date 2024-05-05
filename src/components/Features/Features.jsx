@@ -8,6 +8,7 @@ import {
 } from "./Features.styled";
 import { categories } from "../variables/categories";
 import { details } from "../variables/details";
+import { nanoid } from "nanoid";
 
 export const Features = ({ adverd }) => {
   return (
@@ -18,7 +19,7 @@ export const Features = ({ adverd }) => {
         <TypeCardItem icon="icon-engine" text="Petrol" />
         {categories.map((category) => (
           <TypeCardItem
-            key={category}
+            key={nanoid()}
             icon={category}
             value={adverd.details[category] > 1 && adverd.details[category]}
             text={category.charAt(0).toUpperCase() + category.slice(1)}
@@ -28,7 +29,7 @@ export const Features = ({ adverd }) => {
       <TitleDetails>Vehicle details</TitleDetails>
       <DetailsList>
         {details.map((detail) => (
-          <DetailItem key={detail}>
+          <DetailItem key={nanoid()}>
             <span>{detail}</span>
             <span>{adverd[detail]}</span>
           </DetailItem>

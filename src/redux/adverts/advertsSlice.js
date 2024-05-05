@@ -4,17 +4,28 @@ import { getAdverts } from "./advertsOperations";
 const initialState = {
   isLoading: false,
   adventers: [],
-  favorites: ["hello"],
+  favorites: [],
 };
 
 const adventerSlice = createSlice({
   name: "camper",
   initialState,
+  reducers: {
+    addFavorites: (state, { payload }) => {
+      state.favorites.push(payload);
+    },
+    removeFavorites: (state, { payload }) => {
+      state.favorites = state.favorites.filter((id) => id !== payload);
+    },
+
+    resetadventers: (state) => {
+      state.adventers = initialState.adventers;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAdverts.fulfilled, (state, { payload }) => {
-        state.adventers = [...state.adventers, ...payload];
-        state.favorites = ["world"];
+        state.adventers = [...payload];
       })
       .addCase(getAdverts.rejected, (state, { payload }) => {
         console.log("🚀 ~ builder.addCase ~ payload:", payload);
@@ -23,3 +34,5 @@ const adventerSlice = createSlice({
 });
 
 export const adventerReducer = adventerSlice.reducer;
+export const { addFavorites, removeFavorites, resetadventers } =
+  adventerSlice.actions;

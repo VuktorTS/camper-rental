@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import { FilterCard } from "../FilterCard/FilterCard";
 import {
   ButtonSearch,
@@ -41,7 +42,7 @@ export const AsvertsFilter = () => {
           <EquipmentList>
             {equipments.map((equipment) => (
               <FilterCard
-                key={equipment.text}
+                key={nanoid()}
                 icon={equipment.icon}
                 text={equipment.text}
                 size="SM"
@@ -54,7 +55,7 @@ export const AsvertsFilter = () => {
           <TypeList>
             {types.map((type) => (
               <FilterCard
-                key={type.text}
+                key={nanoid()}
                 icon={type.icon}
                 text={type.text}
                 size="XL"

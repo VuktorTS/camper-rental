@@ -29,6 +29,7 @@ import clsx from "clsx";
 import { Form } from "../Form/Form";
 import { Features } from "../Features/Features";
 import { Reviews } from "../Reviews/Reviews";
+import { nanoid } from "nanoid";
 
 const modalRoot = document.querySelector("#modal");
 
@@ -85,7 +86,7 @@ const CamperInfoModal = ({ onClose, adverd }) => {
         <InfoContainer>
           <CalleryImg>
             {adverd.gallery.map((imgUrl) => (
-              <ImgContainer key={imgUrl}>
+              <ImgContainer key={nanoid()}>
                 <ImgCamper src={imgUrl} alt={adverd.name} />
               </ImgContainer>
             ))}

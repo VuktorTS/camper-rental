@@ -21,7 +21,6 @@ export const Avatar = styled.div`
   font-size: 24;
   color: var(--color-button);
 `;
-// export const RatingContainer = styled.div``;
 export const NameUser = styled.p`
   font-size: 18px;
   font-weight: 600;
