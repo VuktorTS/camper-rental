@@ -12,6 +12,7 @@ export const ImgCamper = styled.img`
   width: 290px;
   height: 310px;
   border-radius: 10px;
+  object-fit: cover;
 `;
 export const HeaderCamper = styled.div`
   display: flex;
