@@ -6,7 +6,6 @@ import {
   TitleDetails,
   TypeCartList,
 } from "./Features.styled";
-import icons from "../../img/sprite.svg";
 import { categories } from "../variables/categories";
 import { details } from "../variables/details";
 
