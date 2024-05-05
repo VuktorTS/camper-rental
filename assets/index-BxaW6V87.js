@@ -94,7 +94,7 @@ Error generating stack: `+o.message+`
   &.active {
     color: var(--color-button);
   }
-`,bt="/camper-rental/assets/sprite-CH-UrZUC.svg",c_=()=>x.jsx(o_,{children:x.jsxs(s_,{children:[x.jsxs(l_,{children:[x.jsx("svg",{width:"40",height:"30",children:x.jsx("use",{href:bt+"#icon-alcove"})}),x.jsx(u_,{to:"/",children:"Camper Rentals"})]}),x.jsxs(a_,{children:[x.jsx("li",{children:x.jsx(fh,{to:"/catalog",children:"Catalog"})}),x.jsx("li",{children:x.jsx(fh,{to:"/favorites",children:"Favorites"})})]})]})}),f_=()=>x.jsxs(i_,{children:[x.jsx(c_,{}),x.jsx(zx,{})]}),d_=j.h1`
+`,bt="/assets/sprite-CH-UrZUC.svg",c_=()=>x.jsx(o_,{children:x.jsxs(s_,{children:[x.jsxs(l_,{children:[x.jsx("svg",{width:"40",height:"30",children:x.jsx("use",{href:bt+"#icon-alcove"})}),x.jsx(u_,{to:"/",children:"Camper Rentals"})]}),x.jsxs(a_,{children:[x.jsx("li",{children:x.jsx(fh,{to:"/catalog",children:"Catalog"})}),x.jsx("li",{children:x.jsx(fh,{to:"/favorites",children:"Favorites"})})]})]})}),f_=()=>x.jsxs(i_,{children:[x.jsx(c_,{}),x.jsx(zx,{})]}),d_=j.h1`
   width: 600px;
   margin: 150px auto;
   color: var(--color-button);
