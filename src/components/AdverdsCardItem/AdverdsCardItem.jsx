@@ -24,6 +24,7 @@ import {
   removeFavorites,
 } from "../../redux/adverts/advertsSlice";
 import { favoriteSelector } from "../../redux/adverts/advertsSelectors";
+import clsx from "clsx";
 
 export const AdverdsCardItem = ({ adverd }) => {
   const [modal, setModal] = useState(false);
@@ -31,12 +32,14 @@ export const AdverdsCardItem = ({ adverd }) => {
   const favorites = useSelector(favoriteSelector);
 
   const switchFavorite = () => {
-    const isCardFavorite = favorites.includes(adverd._id);
+    const isCardFavorite = isFavorite();
     isCardFavorite
       ? dispatch(removeFavorites(adverd._id))
       : dispatch(addFavorites(adverd._id));
   };
-
+  const isFavorite = () => {
+    return favorites.includes(adverd._id);
+  };
   const onClose = () => {
     setModal(false);
   };
@@ -53,7 +56,12 @@ export const AdverdsCardItem = ({ adverd }) => {
           <PriceCamper>€{adverd.price.toFixed(2)}</PriceCamper>
           <button type="button">
             <IconHard onClick={switchFavorite}>
-              <use href={`${icons}#icon-heart`}></use>
+              <use
+                href={`${icons}#${clsx(
+                  { "icon-heart-default": !isFavorite() },
+                  { "icon-heart-fill": isFavorite() },
+                )}`}
+              ></use>
             </IconHard>
           </button>
         </HeaderCamper>
