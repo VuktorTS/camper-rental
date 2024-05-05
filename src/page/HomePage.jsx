@@ -1,4 +1,4 @@
-import { HomeMessage } from "./HomePage";
+import { HomeMessage } from "./HomePage.styled";
 
 export const HomePage = () => {
   return (
