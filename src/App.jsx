@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 import { HomePage } from "./page/HomePage";
 import { CatalogPage } from "./page/CatalogPage";
@@ -12,7 +12,8 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="catalog" element={<CatalogPage />} />
-          <Route path="favorites" element={<FavoritesPage />} />
+          <Route path="favorites" element={<FavoritesPage />} />        
+          <Route path="*" element={<Navigate to='/' replace={true} />} />
         </Route>
       </Routes>
     </Suspense>
