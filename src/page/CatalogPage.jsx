@@ -15,6 +15,25 @@ export const CatalogPage = () => {
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
 
+useEffect(() => {
+//const controller = new AbortController();
+//fetch(url, { controller })
+//.then(data => {
+// Обработка данных
+//});
+//return () => {
+//controller.abort();
+//};
+//}, []);
+//Создает контроллер отмены
+//внутри эффекта
+//Не забудьте передать
+//контроллер отмены
+//в функцию fetch
+//В функции очистки мы запускаем контроллер
+//отмены. Если запрос уже прошел, то при попытке
+//отмены ничего не произойдет
+  
   useEffect(() => {
     dispatch(getAdverts(page));
   }, [dispatch, page]);
